@@ -5,7 +5,7 @@ class ScoresController < ApplicationController
   end
 
   def create
-    @player = Score.create(params.permit(:score, :player_id))
+    @score = Score.create(params.permit(:score, :player_id))
   end
 
 end
