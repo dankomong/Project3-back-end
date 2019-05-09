@@ -5,6 +5,7 @@ class PlayersController < ApplicationController
   end
 
   def create
-    Player.find_or_create_by(params.permit(:name))
+    @player = Player.find_or_create_by(params.permit(:name))
+    render json: @player
   end
 end

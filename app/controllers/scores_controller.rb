@@ -4,4 +4,8 @@ class ScoresController < ApplicationController
     render json: @top_scores
   end
 
+  def create
+    @player = Score.create(params.permit(:score, :player_id))
+  end
+
 end
